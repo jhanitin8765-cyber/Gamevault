@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – GameVault</title>
+  <meta name="description" content="Learn about GameVault – your ultimate gaming blog for reviews, news, and tips. Meet our team of passionate gamers." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050810; --bg2: #0a0f1e; --bg3: #0f1628;
+      --card: #111827; --border: #1e2d4a;
+      --accent: #00e5ff; --accent2: #ff3d6b; --accent3: #7c3aed;
+      --text: #e2e8f0; --text-muted: #64748b; --text-bright: #f8fafc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: 'Exo 2', sans-serif; font-weight: 300; }
+    body::before { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px); pointer-events: none; z-index: 9999; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(5,8,16,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 65px; }
+    .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+    .nav-home { color: var(--text-muted); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-home:hover { color: var(--accent); }
+    .hero { background: linear-gradient(135deg, var(--bg2), var(--bg3)); border-bottom: 1px solid var(--border); padding: 5rem 5%; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .hero-tag { display: inline-block; background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3); color: var(--accent3); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; padding: 0.3rem 1rem; border-radius: 2px; margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 3px; color: var(--text-bright); margin-bottom: 0.8rem; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { color: var(--text-muted); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+    .mission-box { background: linear-gradient(135deg, var(--card), var(--bg3)); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 8px; padding: 2.5rem; margin-bottom: 4rem; text-align: center; }
+    .mission-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--text-bright); margin-bottom: 1rem; }
+    .mission-box p { color: var(--text-muted); line-height: 1.8; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 4rem; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; text-align: center; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; letter-spacing: 2px; color: var(--accent); display: block; }
+    .stat-label { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 0.3rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--text-bright); margin-bottom: 2rem; }
+    .section-title span { color: var(--accent); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+    .team-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+    .team-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .team-avatar { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; color: #fff; }
+    .team-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text-bright); margin-bottom: 0.3rem; }
+    .team-role { font-size: 0.8rem; color: var(--accent); font-family: 'Rajdhani', sans-serif; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .team-bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+    .value-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem; }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .value-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1px; color: var(--text-bright); margin-bottom: 0.6rem; }
+    .value-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+    .cta-box { background: linear-gradient(135deg, rgba(0,229,255,0.05), rgba(255,61,107,0.05)); border: 1px solid var(--border); border-radius: 8px; padding: 3rem; text-align: center; }
+    .cta-box h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 1rem; color: var(--text-bright); }
+    .cta-box p { color: var(--text-muted); margin-bottom: 1.5rem; }
+    .btn { display: inline-block; background: linear-gradient(135deg, var(--accent), #0080ff); color: #000; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2rem 5%; text-align: center; }
+    footer p { color: var(--text-muted); font-size: 0.8rem; }
+    .page-links { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+    .page-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-family: 'Rajdhani', sans-serif; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+    .page-links a:hover { color: var(--accent); }
+    @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Game<span style="-webkit-text-fill-color:var(--accent2)">Vault</span></a>
+  <a href="index.html" class="nav-home">← Back to Home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Our Story</div>
+  <h1>About <span>GameVault</span></h1>
+  <p>We are a passionate team of gamers dedicated to bringing you the best gaming content on the internet.</p>
+</div>
+
+<div class="container">
+
+  <!-- Mission -->
+  <div class="mission-box">
+    <h2>Our Mission</h2>
+    <p>GameVault was created with one goal in mind — to be the most trusted, honest, and comprehensive gaming resource for players of all levels. Whether you're a casual mobile gamer or a hardcore PC enthusiast, we've got you covered with unbiased reviews, breaking news, and expert tips.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-num">500+</span>
+      <div class="stat-label">Articles Published</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">50K+</span>
+      <div class="stat-label">Monthly Readers</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">200+</span>
+      <div class="stat-label">Games Reviewed</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">5+</span>
+      <div class="stat-label">Years Online</div>
+    </div>
+  </div>
+
+  <!-- Team -->
+  <h2 class="section-title">Meet Our <span>Team</span></h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar" style="background: linear-gradient(135deg, #00e5ff, #0080ff);">AS</div>
+      <div class="team-name">Alex Storm</div>
+      <div class="team-role">Founder & Editor-in-Chief</div>
+      <div class="team-bio">10+ years in gaming journalism. Specializes in RPGs and open-world games. Former writer at major gaming publications.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: linear-gradient(135deg, #ff3d6b, #ff8c00);">NR</div>
+      <div class="team-name">Nina Rao</div>
+      <div class="team-role">Senior Reviewer</div>
+      <div class="team-bio">Hardcore FPS and Battle Royale specialist. Has reviewed 100+ games. Known for brutally honest and detailed analysis.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background: linear-gradient(135deg, #7c3aed, #db2777);">MK</div>
+      <div class="team-name">Marco K.</div>
+      <div class="team-role">Hardware & Tech Writer</div>
+      <div class="team-bio">PC building enthusiast and tech expert. Covers gaming hardware, peripherals, and optimization guides.</div>
+    </div>
+  </div>
+
+  <!-- Values -->
+  <h2 class="section-title">What We <span>Stand For</span></h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <span class="value-icon">🎯</span>
+      <div class="value-title">Honest Reviews</div>
+      <div class="value-desc">We never accept payment for positive reviews. Every score is earned, not bought. Our readers trust us and we take that seriously.</div>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">⚡</span>
+      <div class="value-title">Fast News</div>
+      <div class="value-desc">Breaking gaming news delivered fast. We fact-check before publishing so you get accurate information, not just speed.</div>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🏆</span>
+      <div class="value-title">Expert Knowledge</div>
+      <div class="value-desc">Our team consists of dedicated gamers with years of experience across all platforms and genres.</div>
+    </div>
+    <div class="value-card">
+      <span class="value-icon">🌍</span>
+      <div class="value-title">Community First</div>
+      <div class="value-desc">We exist because of our readers. Your feedback shapes our content and we always listen to what the community wants.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>Join the GameVault Community</h2>
+    <p>Subscribe to our newsletter and never miss the latest gaming news, reviews, and exclusive tips.</p>
+    <a href="contact.html" class="btn">Get in Touch</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 GameVault. All rights reserved.</p>
+  <div class="page-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
